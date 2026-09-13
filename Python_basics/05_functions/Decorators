@@ -1,0 +1,168 @@
+'''
+Decorators
+-> Decorators are just gift wrap for your functions.
+-> you don't change what's inside the box. you wrap something extra around it-- and every time someone opens it, they get the original gift plus the wrapping experience. That's exactly what a python decorator dose to a function.
+                    @decorator
+def order-wrap it--> order()--call it--> extra behavior/.original order()
+
+step 1
+
+Why do decorators even exists?
+-> Imagine you're running a small restaurant. You have several functions in your kitchen code:
+'''
+'''
+def cook_pasta():
+    print("Cooking pasta....")
+
+def cook_pizza():
+    print("Cooking pizza....")
+def cook_soup:
+    print("Cooking soup")
+
+
+'''
+'''
+one day your manager says: "I want to know how long every dish takes to cook, and I want every dish logged for our records."
+
+The tempting-but bad- solution is to edit every single function:
+
+import time
+
+def cook_pasta():
+    start = time.time()
+    print("LOG: staring cook_pasta")
+    print("Cookinf pasta...")
+    print("LOG: finised in", time.time().start."seconds")
+
+def cook_pizza():
+    start = time.time()
+    print("LOG: staring cook_pizza")
+    print("Cookinf pizza...")
+    print("LOG: finised in", time.time().start."seconds")
+
+cook_pasta()
+cook_pizza()
+
+
+step 2
+
+The idea decorators are built on: functions are objects
+
+In python, a function is not a special, untouchable thing. It's an object- just like a number, a string, or a list. That means you can:
+
+Assign a function to a variable.
+Pass a function as an argument into another function.
+Return a function from another function
+'''
+def greet():
+    return "Hello!"
+#assign the function itself(no parentheses!) to a variable
+say_hello = greet
+print("say_hello")  #Hello!
+
+def shout(func):
+    #func is just a function passed in, like passing a number
+     return func().upper()
+print(shout(greet)) #Hello!
+
+
+
+#->Inner function
+'''
+def outer_function():
+     print("This is the outer function.")
+
+     def inner_function():
+          print("This is the inner function.")
+     inner_function()
+outer_function()
+
+output:
+This is the outer function.
+This is the inner function.
+'''
+
+def outer():
+    print("I am outer function.")
+ 
+    def inner():
+        print("I am inner function.")
+    return inner
+my_func = outer()
+my_func()
+
+#output:
+#I am outer function.
+#I am inner function.
+
+
+
+
+def summation():
+     result = 5+10
+     return result
+print(summation())
+
+#---------------------------------
+
+def outer():
+    print("I am outer function.")
+    def inner(a):
+        print("I am inner function", a)
+    return inner
+printing = outer()
+printing(5)
+
+#ot: I am outer function.
+ #I am inner function 5.
+
+#-----------------------------
+
+import time
+
+def log_and_time(func):
+    def wrapper():
+        print("Ranna Shuru")
+        start = time.time()
+        func()
+        end = time.time()
+        print("Ranna Shesh")
+        elapsed = end - start
+        print(f"LOG: finised in {elapsed:.4f}s")
+    return wrapper
+
+
+#-> normal way :
+
+def cook_pasta():
+    print("Cooking pasta..")
+cook_nasta = log_and_time(cook_pasta)
+cook_nasta()
+
+def cook_pizza():
+    print("Cooking pizza..")
+cook_nizza = log_and_time(cook_pizza)
+cook_nizza()
+
+def cook_soup():
+    print("Cooking soup....")
+cook_toup = log_and_time(cook_soup)
+cook_toup()
+
+#decorate way:
+'''
+#@log_and_time
+def cook_pasta()"
+    print("Cooking pasta..")
+cook_pasta()
+
+@log_and_time
+def cook_rice()"
+    print("Cooking rice..")
+cook_rice()
+
+@log_and_time
+def cook_egg()"
+    print("Cooking egg..")
+cook_egg()
+'''

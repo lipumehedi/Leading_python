@@ -1,0 +1,118 @@
+#*Finding Pairs (Two-Element Combinations)
+numbers = [1, 2, 3]
+
+for a in numbers:
+    for b in numbers:
+        if a < b:
+            print(f"({a}, {b})")
+Output: (1, 2) (1, 3) (2, 3)
+
+#* Break only exits the innermost Loop
+for i in range(1, 4):
+    for j in range(1, 4):
+        if j == 2:
+            break
+        print(i, j)
+#Output: 1 1 2 1 3 1
+
+*Continue
+
+for i in range(1, 4):
+    for j in range(1, 4):
+         if j == 2:
+            continue
+         print(i, j)
+
+#**student = ["ulfat", "Zumon", "Aminul", "Atiq", "Mortuza"]
+print("Jara loop lecture review koreche tader nam er talika:  ")
+for i in student:
+    if i == "Aminul" or i == "Atiq":
+        continue
+    print(i)
+
+#*pass
+
+age = 17
+if  age < 18:
+    pass
+for i in range(5):
+    pass
+
+#no statement
+
+#*The else Clause with For Loops
+
+student = ["ulfat", "Zumon", "Aminul", "Atiq", "Mortuza", "Foysal"]
+print("Current student list")
+for i in student:
+    if i == "Foysal":
+        break
+    print(i)
+
+else:
+    print("Shobar name print kora done!")
+
+
+#**Checking for Prime Numbers
+num = 29
+is_prime = True
+
+if num < 2:
+    is_prime = False
+else:
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+
+if is_prime:
+    print(num, "is prime")
+else:
+    print(num, "is not prime")
+
+
+* input
+num = int(input("Enter a number to check if it'S a prime number: "))
+
+if num<2:
+    print(num, "Is not a prime number!")
+is_prime = True
+
+for i in range(2, num):
+    if num%i ==0:
+        is_prime=False
+
+if is_prime:
+    print(num, "Is a prime Number!")
+else:
+    print(num, "Is not a prime Number!")
+
+#*Counting Vowels in a String
+text = "Hello World"
+vowels = "aeiouAEIOU"
+count = 0
+
+for char in text:
+    if char in vowels:
+        count += 1
+
+print("Number of vowels:", count)
+
+#* Reversing a String
+text = "Python"
+reversed_text = ""
+
+for char in text:
+    reversed_text = char + reversed_text
+
+print(reversed_text)
+
+
+#*Calculating Factorial
+n = 5
+factorial = 1
+
+for i in range(1, n + 1):
+    factorial *= i
+
+print(f"{n}! = {factorial}")
