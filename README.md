@@ -1,2 +1,2 @@
 # Leading_python
-Python learning journey with fundamentals, OOP practice.
+Python learning journey covering fundamentals, OOP, and hands-on practice projects.
