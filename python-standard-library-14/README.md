@@ -6,7 +6,6 @@ A collection of 14 practical Python examples covering useful Python concepts and
 
 | No. | Topic | Concepts |
 |---:|---|---|
-
 | 01 | Module Import | `import`, `from ... import`, `math` |
 | 02 | Default Values and None | Default parameters, `None` |
 | 03 | Lists and Dictionaries | Lists, dictionaries, `enumerate()`, `pop()` |
