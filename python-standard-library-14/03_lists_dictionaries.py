@@ -14,4 +14,4 @@ for index, fruit in enumerate(fruits):
     
 removed = fruits.pop(1)
 print(removed)
-print(fruits)
+print(fruits) 
