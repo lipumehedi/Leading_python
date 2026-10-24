@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniBlog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo">MiniBlog</a>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Write</a>
+      <a href="#" class="btn">Log in</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Learn Django, one post at a time</h1>
+    <p>Tutorials and notes written by students.</p>
+    <form class="search-form" action="/search/" method="get">
+      <input type="search" name="q" placeholder="Search posts...">
+      <button type="submit">Search</button>
+    </form>
+  </section>
+  <main class="container">
+    <h2>Latest posts</h2>
+    <div class="post-grid">
+      <article class="post-card">
+        <span class="tag">Django</span>
+        <h3>Understanding Django Models</h3>
+        <p class="meta">By Rahim · Oct 23, 2026</p>
+        <p>Models are Python classes that describe your database tables.</p>
+        <a href="#" class="read-more">Read more →</a>
+      </article>
+      <article class="post-card">
+        <span class="tag">CSS</span>
+        <h3>Flexbox in 10 Minutes</h3>
+        <p class="meta">By Nusrat · Oct 18, 2026</p>
+        <p>Three properties that build almost every navbar.</p>
+        <a href="#" class="read-more">Read more →</a>
+      </article>
+      <article class="post-card">
+        <span class="tag">HTML</span>
+        <h3>Forms and the name Attribute</h3>
+        <p class="meta">By Tanvir · Oct 15, 2026</p>
+        <p>Why your data never reaches request.POST, and the fix.</p>
+        <a href="#" class="read-more">Read more →</a>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2026 MiniBlog. Built with HTML and CSS.</p>
+  </footer>
+</body>
+</html>
